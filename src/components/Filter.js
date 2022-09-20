@@ -1,13 +1,17 @@
 import { useDispatch } from "react-redux";
 import React from "react";
+import { connect } from "react-redux";
 
 import { filterChange } from "../reducers/filterReducer";
 
-const FilterAnecdotes = () => {
-  const dispatch = useDispatch();
+const FilterAnecdotes = (props) => {
+  // const dispatch = useDispatch();
 
+  // const handleChange = (event) => {
+  //   dispatch(filterChange(event.target.value));
+  // };
   const handleChange = (event) => {
-    dispatch(filterChange(event.target.value));
+    props.filterChange(event.target.value);
   };
 
   const style = {
@@ -21,4 +25,5 @@ const FilterAnecdotes = () => {
   );
 };
 
-export default FilterAnecdotes;
+// export default FilterAnecdotes;
+export default connect(null, { filterChange })(FilterAnecdotes);
