@@ -17,7 +17,7 @@ const Anecdote = ({ anecdote, handleClick }) => (
 const AnecdoteList = (props) => {
   const handleVote = (anecdote) => {
     props.vote(anecdote);
-    props.setNotification(`You voted '${anecdote.content}'`);
+    props.setNotification(`You voted '${anecdote.content}'`, 5);
   };
 
   // const dispatch = useDispatch();
